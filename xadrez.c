@@ -1,60 +1,81 @@
 #include <stdio.h>
 
-// Este codigo vai simular a movimentação de três peças de xadrez. Ele vai imprimir na tela a direção de cada peça.
+// Este codigo vai simular a movimentação de quatro peças de xadrez. Ele vai imprimir na tela a direção de cada peça.
+
+void movimentoTorre ( int cont) {
+    if (cont <= 5) {
+        printf("Movimento %d : Direita\n", cont );  // imprime 5 vezes "direita"
+    
+        movimentoTorre(cont + 1);
+    }
+    
+}
+
+void movimentoBispo( int cont) {
+    if (cont <= 5) {
+        for (int i = 0; i < 1; i++) {
+            printf("Movimento %d : Cima,", cont);
+            for (int j = 0; j < 1; j++) {
+                printf(" Direita\n");
+                
+            }
+            
+        }
+
+        movimentoBispo( cont + 1);
+    }
+}
+
+void movimentoRainha(int cont) {
+
+    if (cont <= 8) {
+        printf("Movimento %d : Esquerda\n", cont);
+
+        movimentoRainha(cont + 1);
+    }
+}
+
+void movimentoCavalo(int cont) {
+   
+        for (int i = 1; i <= 2; i++) {
+            for (int j = 1; j <= 2 ; j++){
+                printf("\nMovimento %d : Cima", cont);
+                cont++;
+            }
+            printf("\nMovimento %d : Direita",cont);
+            break;
+        }
+    
+}
+
+// Inicio da Execução do Codigo.
 
 int main() {
 
-    // Declaração de variaveis para contador.
+    // Declaração da variavel para o contador.
 
-    int cont1 = 1, cont2 = 1, j = 1;
+    int numero = 1;
 
     // movimentação do torre. 
-
     printf("\n*** TORRE ***\n\n");
 
-    // O while vai repetir o bloco de codigo  5 vezes.
-    while (cont1<=5) {
-    
-        printf("Movimento %d : Direita\n", cont1 );  // imprime 5 vezes "direita"
-        
-         cont1++;
-    };
+    movimentoTorre(numero); // Chama a funçao para executar a movimentação da torre.
 
     // movimentação do bispo.
-
     printf("\n+++ BISPO +++\n\n");
 
-    // O do-while vai repetir o bloco de codigo  5 vezes.
-    do {
-        printf("Movimento %d : Cima, Direita\n", cont2);  // imprime 5 vezes "cima, direita"
-        cont2++;
-    } while (cont2<=5);
+    movimentoBispo(numero); // Chama a funçao para executar a movimentação do bispo.
 
     //movimentação da rainha.
-
     printf("\nMMM RAINHA MMM\n\n");
 
-    // O For vai repetir o bloco de codigo 8 vezes.
-    for (int cont3 = 1 ; cont3 <=8 ; cont3++ ) {
-        printf("Movimento %d : Esquerda\n", cont3);  // imprime 8 vezes "esquerda"
-    };
-
+    movimentoRainha(numero); // Chama a funçao para executar a movimentação da rainha.
 
     // movimentação do cavalo.
-
-    printf("\n $$$ CAVALO $$$");
-
-     // loop aninhado usando for e while.
-     // simula o movimento em "L" do cavalo para esquerda (nesse caso).
-     for(int cont4 = 1; cont4 == 1; cont4++ ) {
-        printf("\n");
-        while (j <=2) {
-            printf("Movimento %d : Baixo\n", j); // imprime 2 vezes "baixo"
-            j++;
-        }
-        printf("Movimento %d : Esquerda\n", cont4); // imprime 1 vez "esquerda"
-     }
-
+    printf("\n$$$ CAVALO $$$");
+  
+    // simula o movimento em "L" do cavalo para direita (nesse caso).
+    movimentoCavalo (numero); // Chama a funçao para executar a movimentação do cavalo.
 
     return 0;
 }
