@@ -1,32 +1,43 @@
 #include <stdio.h>
 
-// Desafio de Xadrez - MateCheck
-// Este código inicial serve como base para o desenvolvimento do sistema de movimentação das peças de xadrez.
-// O objetivo é utilizar estruturas de repetição e funções para determinar os limites de movimentação dentro do jogo.
+// Este codigo vai simular a movimentação de três peças de xadrez. Ele vai imprimir na tela a direção de cada peça.
 
 int main() {
-    // Nível Novato - Movimentação das Peças
-    // Sugestão: Declare variáveis constantes para representar o número de casas que cada peça pode se mover.
 
-    // Implementação de Movimentação do Bispo
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação do Bispo em diagonal.
+    // Declaração de variaveis para contador.
 
-    // Implementação de Movimentação da Torre
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Torre para a direita.
+    int cont1 = 1 , cont2 = 1;
 
-    // Implementação de Movimentação da Rainha
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Rainha para a esquerda.
+    // movimentação do torre. 
 
-    // Nível Aventureiro - Movimentação do Cavalo
-    // Sugestão: Utilize loops aninhados para simular a movimentação do Cavalo em L.
-    // Um loop pode representar a movimentação horizontal e outro vertical.
+    printf("\n*** TORRE ***\n\n");
 
-    // Nível Mestre - Funções Recursivas e Loops Aninhados
-    // Sugestão: Substitua as movimentações das peças por funções recursivas.
-    // Exemplo: Crie uma função recursiva para o movimento do Bispo.
+    // O while vai repetir o bloco de codigo  5 vezes.
+    while (cont1<=5) {
+    
+        printf("Casa %d : Direita\n", cont1 );
+        
+         cont1++;
+    };
 
-    // Sugestão: Implemente a movimentação do Cavalo utilizando loops com variáveis múltiplas e condições avançadas.
-    // Inclua o uso de continue e break dentro dos loops.
+    // movimentação do bispo.
+
+    printf("\n+++ BISPO +++\n\n");
+
+    // O do-while vai repetir o bloco de codigo  5 vezes.
+    do {
+        printf("Casa %d : Cima, Direita\n", cont2);
+        cont2++;
+    } while (cont2<=5);
+
+    //movimentação da rainha.
+
+    printf("\nMMM RAINHA MMM\n\n");
+
+    // O For vai repetir o bloco de codigo 8 vezes.
+    for (int cont3 = 1 ; cont3 <=8 ; cont3++ ) {
+        printf("Casa %d : Esquerda\n", cont3);
+    };
 
     return 0;
 }
